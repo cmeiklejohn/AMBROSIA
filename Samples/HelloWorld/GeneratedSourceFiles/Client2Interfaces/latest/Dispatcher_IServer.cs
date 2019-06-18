@@ -44,13 +44,13 @@ namespace Server
                     {
                         // deserialize arguments
 
-            // arg0: System.String
+            // arg0: System.DateTime
             var p_0_ValueLength = buffer.ReadBufferedInt(cursor);
 cursor += IntSize(p_0_ValueLength);
 var p_0_ValueBuffer = new byte[p_0_ValueLength];
 Buffer.BlockCopy(buffer, cursor, p_0_ValueBuffer, 0, p_0_ValueLength);
 cursor += p_0_ValueLength;
-var p_0 = Ambrosia.BinarySerializer.Deserialize<System.String>(p_0_ValueBuffer);
+var p_0 = Ambrosia.BinarySerializer.Deserialize<System.DateTime>(p_0_ValueBuffer);
 
                         // call the method
 						var p_1 = default(Int32);

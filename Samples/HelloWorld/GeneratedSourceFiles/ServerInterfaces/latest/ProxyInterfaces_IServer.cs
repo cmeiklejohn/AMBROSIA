@@ -12,7 +12,8 @@ namespace Server
     /// </summary>
     public interface IServer
     {
-        Task<Int32> ReceiveMessageAsync(System.String p_0);
+        Task StartRequestAsync(System.DateTime p_0,System.Int32 p_1);
+        Task RecordStateAsync(System.DateTime p_0,System.Byte[] p_1);
     }
 
     /// <summary>
@@ -22,7 +23,8 @@ namespace Server
     [Ambrosia.InstanceProxy(typeof(IServer))]
     public interface IServerProxy
     {
-        Task<Int32> ReceiveMessageAsync(System.String p_0);
-        void ReceiveMessageFork(System.String p_0);
+        Task StartRequestAsync(System.DateTime p_0,System.Int32 p_1);
+        void StartRequestFork(System.DateTime p_0,System.Int32 p_1);
+        void RecordStateFork(System.DateTime p_0,System.Byte[] p_1);
     }
 }

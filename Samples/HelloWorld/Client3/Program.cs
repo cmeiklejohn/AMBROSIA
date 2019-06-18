@@ -28,13 +28,13 @@ namespace Client3
             _server = GetProxy<IServerProxy>(_serverName);
             Console.ForegroundColor = ConsoleColor.Yellow;
 
-            var t1 = _server.ReceiveMessageAsync("\n!! Client: Hello World 3 Message #1!");
+            var t1 = _server.ReceiveMessageAsync(DateTime.UtcNow);
             Console.WriteLine("\n!! Client: Sent message #1.");
 
             var res1 = await t1;
             Console.WriteLine($"\n!! Client: Message #1 completed. Server acknowledges processing {res1} messages.");
 
-            var t2 = _server.ReceiveMessageAsync("\n!! Client: Hello World 3 Message #2!");
+            var t2 = _server.ReceiveMessageAsync(DateTime.UtcNow);
             Console.WriteLine("\n!! Client: Sent message #2.");
 
             var res2 = await t2;

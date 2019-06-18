@@ -23,13 +23,13 @@ namespace Server
         }
 
         async Task<Int32>
-        IServerProxy.ReceiveMessageAsync(System.String p_0)
+        IServerProxy.ReceiveMessageAsync(System.DateTime p_0)
         {
 			return await ReceiveMessageAsync(p_0);
         }
 
         async Task<Int32>
-        ReceiveMessageAsync(System.String p_0)
+        ReceiveMessageAsync(System.DateTime p_0)
         {
             SerializableTaskCompletionSource rpcTask;
             // Make call, wait for reply
@@ -41,7 +41,7 @@ namespace Server
 			byte[] arg0Bytes = null;
 
             // Argument 0
-            arg0Bytes = Ambrosia.BinarySerializer.Serialize<System.String>(p_0);
+            arg0Bytes = Ambrosia.BinarySerializer.Serialize<System.DateTime>(p_0);
 arg0Size = IntSize(arg0Bytes.Length) + arg0Bytes.Length;
 
             totalArgSize += arg0Size;
@@ -95,7 +95,7 @@ wp.curLength += arg0Bytes.Length;
 			return (Int32) currentResult.Result;
         }
 
-        void IServerProxy.ReceiveMessageFork(System.String p_0)
+        void IServerProxy.ReceiveMessageFork(System.DateTime p_0)
         {
             SerializableTaskCompletionSource rpcTask;
 
@@ -106,7 +106,7 @@ wp.curLength += arg0Bytes.Length;
 			int arg0Size = 0;
 			byte[] arg0Bytes = null;
 
-            arg0Bytes = Ambrosia.BinarySerializer.Serialize<System.String>(p_0);
+            arg0Bytes = Ambrosia.BinarySerializer.Serialize<System.DateTime>(p_0);
 arg0Size = IntSize(arg0Bytes.Length) + arg0Bytes.Length;
 
             totalArgSize += arg0Size;

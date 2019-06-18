@@ -1,11 +1,9 @@
-﻿using System;
+﻿using Ambrosia;
+using System;
 using System.Runtime.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
-using Ambrosia;
-using Client2;
 using Server;
-using Microsoft.VisualStudio.Threading;
 
 namespace Client2
 {
